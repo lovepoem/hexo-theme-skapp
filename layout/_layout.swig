@@ -7,7 +7,7 @@
     {% endblock %}
 
     {% include './_partial/common/head.swig' %}
-    
+
     {% block pageCss %}
     {% endblock %}
 </head>
@@ -45,7 +45,7 @@
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?ffaad2994a5f8f16d591e919e16488df";
+          hm.src = "https://hm.baidu.com/hm.js?8dd700474b9448fa0d7db1f5e2236886";
           var s = document.getElementsByTagName("script")[0];
           s.parentNode.insertBefore(hm, s);
         })();
