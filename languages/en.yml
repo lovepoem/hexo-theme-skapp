@@ -8,6 +8,7 @@ menu:
   archive: Archive
   tags: Tags
   github: Github
+  linkedfriend: Linked
 
 aside:
   introduction: Introduction
@@ -31,6 +32,6 @@ copyright_statement:
   three: Thank you for reading, this article belongs to
   four: copyright, if reproduced, please indicate the source
 
-other: 
+other:
   bout: bout
   year: Year

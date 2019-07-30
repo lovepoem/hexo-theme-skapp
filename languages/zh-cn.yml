@@ -8,6 +8,7 @@ menu:
   archive: 归档
   tags: 标签
   github: Github
+  linkedfriend: 友链
 
 aside:
   introduction: 简介
@@ -31,6 +32,6 @@ copyright_statement:
   three: 感谢您的阅读，本文由
   four: 版权所有。如若转载，请注明出处
 
-other: 
+other:
   bout: 次
   year: 年
