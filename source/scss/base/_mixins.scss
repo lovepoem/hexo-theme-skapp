@@ -103,7 +103,7 @@
         padding: .5em;
         -webkit-overflow-scrolling: touch;
         overflow: auto;
-        font-size: 12px;
+        font-size: 14px;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
         & + & {
@@ -201,7 +201,7 @@
 
     img {
         max-width: 100%;
-        
+
         &:not(:last-child) {
             margin-bottom: 10px;
         }
