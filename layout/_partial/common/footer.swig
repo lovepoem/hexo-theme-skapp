@@ -26,7 +26,7 @@
                     <img src="{{ img }}" alt="logo" title="{{ get_setting('title') }}">
                 </div>
             {% endif %}
-            
+
             {% set links = site.data.footer_link %}
             {% if links %}
                 {% for item in links %}
@@ -49,10 +49,10 @@
     <section class="footer__bottom">
         <div class="page__container footer__container">
             <p class="footer__copyright">©
-                2018 powered by
-                <a href="https://github.com/lovepoem" target="_blank">王欣</a>
+                2019 powered by
+                <a href="https://github.com/Mrminfive/hexo-theme-skapp" target="_blank">Hexo - Skapp</a>
                 {% if config.busuanzi %}
-                <span id="busuanzi_container_site_pv">Total number of visits：<span id="busuanzi_value_site_pv"></span></span>&nbsp;Total visitor number:<span id="busuanzi_value_site_uv"></span>
+                <span id="busuanzi_container_site_pv">访问量：<span id="busuanzi_value_site_pv"></span></span>&nbsp;人数:<span id="busuanzi_value_site_uv"></span>
                 {% endif %}
             </p>
             <ul class="footer__social-network clearfix">
