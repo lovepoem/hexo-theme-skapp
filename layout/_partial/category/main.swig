@@ -7,9 +7,10 @@
                 </div>
             {% endfor %}
         </div>
-        
+
         {{ s_paginator(3) }}
     </div>
 
     {% include '../common/sidebar.swig' %}
+    {% include '../../_partial/post/post-statistical.swig' %}
 </main>
