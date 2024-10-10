@@ -49,7 +49,7 @@
     <section class="footer__bottom">
         <div class="page__container footer__container">
             <p class="footer__copyright">©
-                2019 powered by
+                2024 powered by
                 <a href="https://github.com/Mrminfive/hexo-theme-skapp" target="_blank">Hexo - Skapp</a>
                 {% if config.busuanzi %}
                 <span id="busuanzi_container_site_pv">访问量：<span id="busuanzi_value_site_pv"></span></span>&nbsp;人数:<span id="busuanzi_value_site_uv"></span>
