@@ -1,3 +1,5 @@
+@use "sass:color";
+
 body {
     @media screen and (min-width: $mq-mobile) {
 
@@ -58,7 +60,7 @@ body {
     }
 
     & > a {
-        @include link(darken($main-color, 20%));
+        @include link(color.adjust($main-color, $lightness: -20%));
         position: absolute;
         top: 50%;
         left: 50%;

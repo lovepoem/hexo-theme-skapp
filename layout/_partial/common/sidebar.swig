@@ -19,6 +19,15 @@
         </div>
     {% endif %}
 
+    {% if get_setting('wechat_qrcode') %}
+        <div class="sidebar__block">
+            <h3 class="block__title">{{ __('aside.wechat_official') }}</h3>
+            <div class="sidebar__img">
+                <img src="{{ get_setting('wechat_qrcode') }}" alt="微信公众号二维码" title="微信公众号二维码">
+            </div>
+        </div>
+    {% endif %}
+
     <div class="sidebar__block">
         <h3 class="block__title">{{ __('aside.categorie') }}</h3>
         {{ list_categories({ order: -1, class: 'block' }) }}

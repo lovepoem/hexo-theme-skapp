@@ -33,7 +33,7 @@ math:
 
 # Sass
 node_sass:
-  outputStyle: nested
+  outputStyle: expanded
   precision: 5
   sourceComments: false
 
@@ -58,37 +58,45 @@ hfc_useref:
 hfc_html:
   enable: true
   exclude:
+  minify: true
+  removeComments: true
+  removeCommentsFromCDATA: true
+  collapseWhitespace: true
 
 hfc_css:
   enable: true
   exclude:
     - '*.min.css'
+  minify: true
+  autoprefixer: true
 
 hfc_js:
   enable: true
   mangle: true
   exclude:
     - '*.min.js'
+  compress: true
+  sourceMap: false
 
 hfc_img:
-  enable: false
-  interlaced: false
-  multipass: false
-  optimizationLevel: 2
-  pngquant: false
-  progressive: false
+  enable: true
+  interlaced: true
+  multipass: true
+  optimizationLevel: 5
+  pngquant: true
+  progressive: true
 
 hfc_favicons:
   enable: false
   src: img/blog-logo.png
   target: img/
   icons:
-    android: true
-    appleIcon: true
+    android: false
+    appleIcon: false
     appleStartup: false
     coast: false
-    favicons: true
+    favicons: false
     firefox: false
     opengraph: false
-    windows: true
+    windows: false
     yandex: false

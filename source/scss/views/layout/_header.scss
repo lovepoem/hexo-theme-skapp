@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "sass:math";
+
 $header-height: 350px   !default;
 $nav-height: 60px       !default;
 
@@ -85,7 +88,7 @@ body {
         }
 
         .page__nav .nav__item a:hover {
-            color: darken(rgba(16, 0, 90, 0.12), 20%);
+            color: color.adjust(rgba(16, 0, 90, 0.12), $lightness: -20%);
         }
     }
 }
@@ -153,7 +156,7 @@ body {
 .page__info {
     position: absolute;
     left: 0;
-    top: calc(50% + #{($nav-height + $pad * 2) / 2});
+    top: calc(50% + #{math.div($nav-height + $pad * 2, 2)});
     transform: translateY(-50%);
     display: block;
     width: 100%;

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $paginator-height: 32px !default;
 
 @mixin item($bgc) {
@@ -38,7 +40,7 @@ $paginator-height: 32px !default;
         transition: background $transition;
 
         &:hover {
-            background-color: darken(#d8e5f3, 20%);
+            background-color: color.adjust(#d8e5f3, $lightness: -20%);
         }
     }
 
