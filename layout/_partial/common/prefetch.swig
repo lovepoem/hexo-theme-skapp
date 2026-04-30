@@ -32,8 +32,8 @@
     <link rel="preload" href="{{ url_for('scss/views/page/post.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- 预加载关键字体 -->
-    <link rel="preload" href="{{ url_for('fonts/iconfont.woff') }}" as="font" type="font/woff" crossorigin>
-    
+    {# icon font preload removed: font is not used in initial render on many pages and triggers preload warning #}
+
     <!-- DNS预解析 -->
     <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
     <link rel="dns-prefetch" href="//hm.baidu.com">
