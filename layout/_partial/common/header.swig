@@ -1,5 +1,6 @@
 <!-- 页头 -->
-<header id="page-header" class="page__header" style="background-image: url('{{ get_setting('header_cover') }}');">
+<header id="page-header" class="page__header"
+        style="--header-cover: url('{{ get_setting('header_cover') }}'); --header-cover-mobile: url('{{ get_setting('header_cover_mobile')|default(get_setting('header_cover')) }}'); background-image: var(--header-cover);">
     <nav class="page__navbar">
         <div class="page__container navbar-container">
             <a class="page__logo" href="{{ url_for('/') }}" title="{{ get_setting('title') }}" alt="{{ get_setting('title') }}">

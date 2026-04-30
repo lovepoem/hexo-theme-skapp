@@ -1,9 +1,10 @@
 <article class="page__post">
     <div class="post__cover">
-        <img src="{{ page.cover|default(get_setting('default_cover')) }}" 
-             alt="{{ page.title }}" 
-             loading="lazy"
-             decoding="async">
+        <img src="{{ page.cover|default(get_setting('default_cover')) }}"
+             alt="{{ page.title }}"
+             loading="eager"
+             decoding="async"
+             fetchpriority="high">
     </div>
 
     <header class="post__info">

@@ -6,6 +6,10 @@ $nav-height: 60px       !default;
 
 body {
     @media screen and (max-width: $mq-mobile) {
+        .page__header {
+            background-image: var(--header-cover-mobile, var(--header-cover));
+        }
+
         .page__header--small {
             .nav__list {
                 background: $main-color;
