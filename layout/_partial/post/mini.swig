@@ -1,10 +1,10 @@
 <article itemscope itemtype="http://schema.org/Article" class="page__mini-article">
     <div class="mini-article__cover">
         {% if not post.cover %}
-            <img itemprop="image" src="{{ get_setting('default_cover') }}" alt="{{ post.title }}"/>
+            <img itemprop="image" src="{{ get_setting('default_cover') }}" alt="{{ post.title }}" loading="lazy" decoding="async"/>
         {% endif %}
         {% if post.cover %}
-            <img itemprop="image" src="{{ post.cover }}" alt="{{ post.title }}"/>
+            <img itemprop="image" src="{{ post.cover }}" alt="{{ post.title }}" loading="lazy" decoding="async"/>
         {% endif %}
         <div itemprop="datePublished" content="{{ data_xml(post.date || post.update) }}" class="mini-article__date">
             <span class="date__day">{{ date(post.date || post.update, 'D') }}</span>

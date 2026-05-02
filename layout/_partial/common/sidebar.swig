@@ -23,7 +23,7 @@
         <div class="sidebar__block">
             <h3 class="block__title">{{ __('aside.wechat_official') }}</h3>
             <div class="sidebar__img">
-                <img src="{{ get_setting('wechat_qrcode') }}" alt="微信公众号二维码" title="微信公众号二维码">
+                <img src="{{ get_setting('wechat_qrcode') }}" alt="微信公众号二维码" title="微信公众号二维码" loading="lazy" decoding="async">
             </div>
         </div>
     {% endif %}

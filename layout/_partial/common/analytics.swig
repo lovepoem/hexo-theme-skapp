@@ -22,3 +22,11 @@ var _hmt = _hmt || [];
     gtag('config', '{{ config.google_statistic|default(theme.google_statistic) }}');
   </script>
 {% endif %}
+
+<!-- Vercel Speed Insights -->
+{% if config.vercel_speed_insights %}
+  <script type="module">
+    import { injectSpeedInsights } from "https://cdn.jsdelivr.net/npm/@vercel/speed-insights/+esm";
+    injectSpeedInsights();
+  </script>
+{% endif %}

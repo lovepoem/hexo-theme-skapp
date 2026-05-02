@@ -1,22 +1,82 @@
 {% if page.comments && config.gitTalk %}
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script src="/js/md5.min.js"></script>
-
     <script>
-        var tags = [{% for tag in page.tags %}'{{ tag.name }}', {% endfor %}];
+        (function () {
+            var container = document.getElementById('comment-container');
 
-        var gitalk = new Gitalk({
-            clientID: '{{ config.gitTalk.clientId }}',
-            clientSecret: '{{ config.gitTalk.clientSecret }}',
-            repo: '{{ config.gitTalk.repo }}',
-            owner: '{{ config.gitTalk.owner }}',
-            admin: [{% for item in config.gitTalk.admin %}'{{ item }}', {% endfor %}],
-            labels: tags,
-            id: md5(location.href)
-        });
+            if (!container || container.dataset.loaded === 'true') {
+                return;
+            }
 
-        gitalk.render('comment-container');
+            var tags = [{% for tag in page.tags %}'{{ tag.name }}', {% endfor %}];
+
+            function loadScript(src) {
+                return new Promise(function (resolve, reject) {
+                    var script = document.createElement('script');
+                    script.src = src;
+                    script.onload = resolve;
+                    script.onerror = reject;
+                    document.body.appendChild(script);
+                });
+            }
+
+            function loadStyle(href) {
+                if (document.querySelector('link[data-gitalk-style="true"]')) {
+                    return;
+                }
+
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                link.dataset.gitalkStyle = 'true';
+                document.head.appendChild(link);
+            }
+
+            function bootGitalk() {
+                if (container.dataset.loaded === 'true') {
+                    return;
+                }
+
+                container.dataset.loaded = 'true';
+                loadStyle('https://unpkg.com/gitalk/dist/gitalk.css');
+
+                Promise.all([
+                    loadScript('/js/md5.min.js'),
+                    loadScript('https://unpkg.com/gitalk/dist/gitalk.min.js')
+                ]).then(function () {
+                    var gitalk = new Gitalk({
+                        clientID: '{{ config.gitTalk.clientId }}',
+                        clientSecret: '{{ config.gitTalk.clientSecret }}',
+                        repo: '{{ config.gitTalk.repo }}',
+                        owner: '{{ config.gitTalk.owner }}',
+                        admin: [{% for item in config.gitTalk.admin %}'{{ item }}', {% endfor %}],
+                        labels: tags,
+                        id: md5(location.href)
+                    });
+
+                    gitalk.render('comment-container');
+                }).catch(function () {
+                    container.dataset.loaded = 'false';
+                });
+            }
+
+            if (!('IntersectionObserver' in window)) {
+                bootGitalk();
+                return;
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        observer.disconnect();
+                        bootGitalk();
+                    }
+                });
+            }, {
+                rootMargin: '300px 0px'
+            });
+
+            observer.observe(container);
+        })();
     </script>
 {% endif %}
 

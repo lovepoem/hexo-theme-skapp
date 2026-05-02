@@ -41,15 +41,6 @@
         <script type="text/javascript" src="{{ url_for('/js/layout/header.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('/js/layout/back-top.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('/js/layout/post.js') }}"></script>
-        <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?8dd700474b9448fa0d7db1f5e2236886";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
     <!-- endbuild -->
 
     {% block pagejs %}

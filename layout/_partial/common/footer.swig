@@ -23,7 +23,7 @@
             {% set img = get_setting('qrcode', 'avatar') %}
             {% if img %}
                 <div class="footer-top__item footer__image">
-                    <img src="{{ img }}" alt="logo" title="{{ get_setting('title') }}">
+                    <img src="{{ img }}" alt="logo" title="{{ get_setting('title') }}" loading="lazy" decoding="async">
                 </div>
             {% endif %}
 
@@ -69,7 +69,7 @@
         </div>
     </section>
 </footer>
-{% if (theme.mermaid.enable)  %}
+{% if theme.mermaid.enable and page.mermaid %}
   <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
   <script>
     if (window.mermaid) {
