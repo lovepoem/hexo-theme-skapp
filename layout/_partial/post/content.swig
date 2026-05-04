@@ -9,6 +9,9 @@
 
     <header class="post__info">
         <h1 class="post__title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="post__subtitle">{{ page.subtitle }}</p>
+        {% endif %}
 
         <div class="post__mark">
             <div class="mark__block">

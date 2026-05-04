@@ -2,10 +2,20 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 <meta name="format-detection" content="telephone=no">
+{% set meta_description = page.description|default(page.subtitle)|default(get_setting('description')) %}
 <meta name="author" content="{{ get_setting('author').name }}" />
 <meta name="designer" content="minfive" />
 <meta name="keywords" content="{{ get_setting('keywords') }}"/>
-<meta name="description" content="{{ get_setting('description') }}" />
+<meta name="description" content="{{ meta_description }}" />
+<meta property="og:type" content="{% if is_post() %}article{% else %}website{% endif %}" />
+<meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ config.seotitle|default(theme.seotitle) }}" />
+<meta property="og:description" content="{{ meta_description }}" />
+<meta property="og:url" content="{{ url }}" />
+<meta property="og:image" content="{{ page.cover|default(get_setting('default_cover')) }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ config.seotitle|default(theme.seotitle) }}" />
+<meta name="twitter:description" content="{{ meta_description }}" />
+<meta name="twitter:image" content="{{ page.cover|default(get_setting('default_cover')) }}" />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />

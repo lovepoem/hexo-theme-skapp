@@ -34,6 +34,13 @@ body {
     line-height: 1;
 }
 
+.post__subtitle {
+    margin: 0 0 1.5em;
+    color: $main-fc;
+    font-size: 1.05em;
+    line-height: 1.7;
+}
+
 .post__mark {
     display: flex;
     width: 100%;

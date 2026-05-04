@@ -1,5 +1,7 @@
+{% if !is_post() && !is_archive() && !is_category() && !is_tag() %}
 <link rel="preload" href="{{ get_setting('header_cover_mobile')|default(get_setting('header_cover')) }}" as="image" media="(max-width: 767px)" fetchpriority="high" />
 <link rel="preload" href="{{ get_setting('header_cover') }}" as="image" media="(min-width: 768px)" fetchpriority="high" />
+{% endif %}
 
 {% if is_home() %}
     {% set arr = num_toArray(page.total) %}
