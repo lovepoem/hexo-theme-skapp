@@ -12,11 +12,7 @@
     {% endblock %}
 </head>
 <body ontouchstart>
-    {% block loader %}
-        {% include './_partial/common/loader.swig' %}
-    {% endblock %}
-
-    <div id="page" class="page js-hidden">
+    <div id="page" class="page">
         {% block header %}
             {% include './_partial/common/header.swig' %}
         {% endblock %}
@@ -37,7 +33,6 @@
         <script type="text/javascript" src="{{ url_for('/js/common/utils.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('/js/common/pack.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('/js/common/animation.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('/js/layout/loading.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('/js/layout/header.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('/js/layout/back-top.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('/js/layout/post.js') }}"></script>
