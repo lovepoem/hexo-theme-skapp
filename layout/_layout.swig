@@ -30,12 +30,12 @@
     </div>
 
     <!-- build:js /js/common.js -->
-        <script type="text/javascript" src="{{ url_for('/js/common/utils.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('/js/common/pack.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('/js/common/animation.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('/js/layout/header.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('/js/layout/back-top.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('/js/layout/post.js') }}"></script>
+        <script defer type="text/javascript" src="{{ url_for('/js/common/utils.js') }}"></script>
+        <script defer type="text/javascript" src="{{ url_for('/js/common/pack.js') }}"></script>
+        <script defer type="text/javascript" src="{{ url_for('/js/common/animation.js') }}"></script>
+        <script defer type="text/javascript" src="{{ url_for('/js/layout/header.js') }}"></script>
+        <script defer type="text/javascript" src="{{ url_for('/js/layout/back-top.js') }}"></script>
+        <script defer type="text/javascript" src="{{ url_for('/js/layout/post.js') }}"></script>
     <!-- endbuild -->
 
     {% block pagejs %}

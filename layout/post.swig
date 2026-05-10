@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block pagejs %}
-    {{ js('js/page/post.js') }}
+    <script defer src="{{ url_for('/js/page/post.js') }}"></script>
 {% endblock %}
 
 {% block other %}
